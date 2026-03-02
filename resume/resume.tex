@@ -1,0 +1,153 @@
+\documentclass[11pt,a4paper]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[top=1.2cm,bottom=1.2cm,left=1.5cm,right=1.5cm]{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{parskip}
+
+% Colors
+\definecolor{primary}{HTML}{2563EB}
+\definecolor{darktext}{HTML}{1F2937}
+\definecolor{lighttext}{HTML}{6B7280}
+\definecolor{rulecolor}{HTML}{D1D5DB}
+
+% Hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primary,
+    urlcolor=primary,
+    pdftitle={Manuel Motta - Resume},
+    pdfauthor={Manuel Agustin Motta Herrera},
+}
+
+% Section formatting
+\titleformat{\section}{\large\bfseries\color{primary}}{}{0em}{}[\color{rulecolor}\titlerule]
+\titlespacing{\section}{0pt}{10pt}{6pt}
+
+% No page numbers
+\pagestyle{empty}
+
+% Compact lists
+\setlist[itemize]{leftmargin=1.2em, nosep, topsep=2pt, itemsep=1pt}
+
+\begin{document}
+
+% ===== HEADER =====
+\begin{center}
+    {\LARGE\bfseries\color{darktext} Manuel Agust\'{i}n Motta Herrera} \\[8pt]
+    {\color{lighttext}
+        \faMapMarker*\enspace Bogot\'{a}, Colombia \quad\textbar\quad
+        \faPhone*\enspace +57\,301\,593\,1002 \quad\textbar\quad
+        \faEnvelope\enspace \href{mailto:manuelmottaherrera@gmail.com}{manuelmottaherrera@gmail.com}
+    } \\[4pt]
+    {\color{lighttext}
+        \faGithub\enspace \href{https://github.com/manuelmottaherrera}{github.com/manuelmottaherrera} \quad\textbar\quad
+        \faLinkedin\enspace \href{https://www.linkedin.com/in/manuel-motta-65b84a1a7}{linkedin.com/in/manuel-motta} \quad\textbar\quad
+        \faStackOverflow\enspace \href{https://stackoverflow.com/users/13502779}{stackoverflow/manuel-motta}
+    }
+\end{center}
+
+\vspace{-2pt}
+
+% ===== PROFILE =====
+\section{Profile}
+
+Technical Lead and Systems Engineer with 12+ years of professional experience spanning embedded systems, enterprise .NET applications, BPM financial platforms, and modern reactive microservices. Currently leading electoral technology projects at Tyse SAS, architecting event-driven microservices with Spring Boot 3/WebFlux and AI-powered solutions. Previously spent nearly 7 years at Trycore SAS delivering BPM financial systems for BBVA (Colombia) and APAP (Dominican Republic).
+
+% ===== EXPERIENCE =====
+\section{Experience}
+
+\textbf{Technical Lead} \hfill {\color{lighttext} Feb 2025 -- Present} \\
+\textit{Tyse SAS -- Tecnolog\'{i}a y Servicios Electorales} \hfill \href{https://www.tysesas.com}{tysesas.com}
+\begin{itemize}
+    \item Leading architecture and development of an electoral scrutiny platform with 6 microservices
+    \item Designed reactive backend services with Spring Boot 3, WebFlux, and R2DBC for high-throughput electoral data processing
+    \item Built AI-powered WhatsApp helpdesk chatbot using Claude API with RAG (PostgreSQL full-text search)
+    \item Architected event-driven pipeline with Kafka for E14 electoral form processing, anomaly detection, and notifications
+    \item Implemented React frontend with Spring Cloud Gateway, JWT authentication, and Consul service discovery
+    \item Adopted AI-assisted development workflow using Claude Code as co-developer, accelerating architecture design, code generation, and debugging
+    \item \textbf{Stack:} Java 17, Spring Boot 3, WebFlux, R2DBC, React, PostgreSQL, Kafka, Docker, Consul, MinIO, Claude AI API, Claude Code, JHipster 8
+\end{itemize}
+
+\vspace{4pt}
+
+\textbf{Backend Developer \textbar\ SCRUM Cell Leader} \hfill {\color{lighttext} Jul 2018 -- Feb 2025} \\
+\textit{Trycore SAS} \hfill \href{https://www.trycore.co}{trycore.co}
+\begin{itemize}
+    \item Developed process-oriented financial applications using Bonita Soft BPM for major banking institutions
+    \item Delivered BPM solutions for BBVA Colombia and APAP Dominican Republic
+    \item Led SCRUM cell, coordinating sprint planning, daily standups, and sprint reviews
+    \item \textbf{Stack:} Java 8, Spring Boot, Groovy, Oracle, PostgreSQL, Bonita Soft, AngularJS, Liquibase, Maven, REST API, SOA
+\end{itemize}
+
+\vspace{4pt}
+
+\textbf{Embedded Developer} \hfill {\color{lighttext} Feb 2017 -- Jun 2018} \\
+\textit{Rowel Ingenier\'{i}a SAS} \hfill \href{https://www.rowel.co}{rowel.co}
+\begin{itemize}
+    \item Developed firmware for electromechanical gaming system using PSoC5LP microcontroller
+    \item \textbf{Stack:} C, PSoC5LP, Git
+\end{itemize}
+
+\vspace{4pt}
+
+\textbf{Jr .NET Developer} \hfill {\color{lighttext} Oct 2015 -- Jan 2017} \\
+\textit{Mikohn Technology SAS} \hfill \href{https://www.mikohn.net}{mikohn.net}
+\begin{itemize}
+    \item Developed and maintained casino-oriented management and monitoring systems
+    \item \textbf{Stack:} C\#, VB.NET, SQL Server, LINQ, WPF, XAML, MVC
+\end{itemize}
+
+\vspace{4pt}
+
+\textbf{Jr .NET Developer} \hfill {\color{lighttext} Jan 2012 -- Sep 2013} \\
+\textit{Geosigma Ltda.}
+\begin{itemize}
+    \item Built environmental and social impact calculator; designed data capture forms for field collection
+    \item \textbf{Stack:} Microsoft Access, Visual Basic
+\end{itemize}
+
+% ===== EDUCATION =====
+\section{Education}
+
+\textbf{B.Sc. Systems and Computer Engineering} \hfill {\color{lighttext} 2014 -- 2019} \\
+\textit{Universidad Nacional de Colombia} \hfill Bogot\'{a}
+
+\vspace{4pt}
+
+\textbf{Electronic Engineering (coursework)} \hfill {\color{lighttext} 2010 -- 2013} \\
+\textit{Universidad Distrital Francisco Jos\'{e} de Caldas} \hfill Bogot\'{a}
+
+% ===== SKILLS =====
+\section{Technical Skills}
+
+\begin{description}[leftmargin=7.5em, labelwidth=7em, labelsep=0.5em, nosep, font=\bfseries\color{darktext}]
+    \item[Backend] Java 17, Spring Boot 3, WebFlux, R2DBC, Spring Cloud, Groovy, C\#, .NET, C
+    \item[Frontend] React, JavaScript, TypeScript, AngularJS, HTML5, CSS3
+    \item[Databases] PostgreSQL, Oracle, SQL Server, R2DBC, Liquibase
+    \item[Architecture] Microservices, REST API, SOA, Event-driven (Kafka), BPM (Bonita Soft), Reactive
+    \item[DevOps] Docker, Docker Compose, Consul, MinIO, Git, Maven, JHipster
+    \item[AI/ML] Claude API (Anthropic), RAG, Full-text Search, NLP
+    \item[Methodology] SCRUM, Agile, Team Leadership, Sprint Planning
+\end{description}
+
+% ===== AWARDS =====
+\section{Awards \& Certifications}
+
+\textbf{2nd Place} -- 4th IEEE Practical Circuits Tournament, Universidad Nacional de Colombia \hfill {\color{lighttext} 2015} \\
+\textbf{Web Programming} -- HTML \& JavaScript, SENA Virtual (40 hours) \hfill {\color{lighttext} 2012}
+
+\vspace{6pt}
+
+\begin{center}
+    {\small\color{lighttext} References available upon request}
+\end{center}
+
+\end{document}

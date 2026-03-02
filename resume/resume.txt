@@ -1,0 +1,132 @@
+MANUEL AGUSTIN MOTTA HERRERA
+================================================================================
+
+Location:       Bogota, Colombia
+Phone:          +57 301 593 1002
+Email:          manuelmottaherrera@gmail.com
+LinkedIn:       https://www.linkedin.com/in/manuel-motta-65b84a1a7
+GitHub:         https://github.com/manuelmottaherrera
+Stack Overflow: https://stackoverflow.com/users/13502779/manuel-motta
+
+================================================================================
+PROFESSIONAL SUMMARY
+================================================================================
+
+Technical Lead and Systems Engineer with 12+ years of professional experience
+spanning embedded systems, enterprise .NET applications, BPM financial platforms,
+and modern reactive microservices. Currently leading electoral technology projects
+at Tyse SAS, architecting event-driven microservices with Spring Boot 3, WebFlux,
+and AI-powered solutions. Previously spent nearly 7 years at Trycore SAS
+delivering BPM financial systems for BBVA (Colombia) and APAP (Dominican
+Republic). Proficient in AI-assisted development using Claude Code.
+
+================================================================================
+TECHNICAL SKILLS
+================================================================================
+
+Programming Languages: Java 17, Java 8, Groovy, C#, VB.NET, JavaScript,
+    TypeScript, C, Visual Basic
+
+Frameworks: Spring Boot 3, Spring WebFlux, Spring Cloud, Spring Cloud Gateway,
+    R2DBC, React, AngularJS, .NET, WPF, MVC
+
+Databases: PostgreSQL, Oracle, SQL Server, Microsoft Access, R2DBC, Liquibase
+
+Architecture: Microservices, REST API, SOA, Event-driven Architecture,
+    BPM (Bonita Soft), Reactive Programming
+
+DevOps and Tools: Docker, Docker Compose, Apache Kafka, Consul, MinIO, Git,
+    Maven, JHipster, Jira
+
+AI and Machine Learning: Claude API (Anthropic), Claude Code, Retrieval
+    Augmented Generation (RAG), Full-text Search, Natural Language
+    Processing (NLP)
+
+Methodology: SCRUM, Agile, Team Leadership, Sprint Planning, Sprint Reviews
+
+Other: JWT Authentication, WhatsApp Business API, Apache PDFBox, OpenAPI, Swagger
+
+================================================================================
+PROFESSIONAL EXPERIENCE
+================================================================================
+
+TECHNICAL LEAD
+Tyse SAS - Tecnologia y Servicios Electorales | Bogota, Colombia
+Feb 2025 - Present
+
+- Leading architecture and development of an electoral scrutiny platform
+  composed of 6 microservices
+- Designed reactive backend services with Spring Boot 3, WebFlux, and R2DBC
+  for high-throughput electoral data processing
+- Built AI-powered WhatsApp helpdesk chatbot using Claude API with Retrieval
+  Augmented Generation (RAG) and PostgreSQL full-text search
+- Architected event-driven pipeline with Apache Kafka for E14 electoral form
+  processing, anomaly detection, and notifications
+- Implemented React frontend with Spring Cloud Gateway, JWT authentication,
+  and Consul service discovery
+- Adopted AI-assisted development workflow using Claude Code as co-developer,
+  accelerating architecture design, code generation, and debugging
+- Technologies: Java 17, Spring Boot 3, WebFlux, R2DBC, React, PostgreSQL,
+  Apache Kafka, Docker, Consul, MinIO, Claude AI API, Claude Code, JHipster 8
+
+--------------------------------------------------------------------------------
+
+BACKEND DEVELOPER AND SCRUM CELL LEADER
+Trycore SAS | Bogota, Colombia
+Jul 2018 - Feb 2025
+
+- Developed process-oriented financial applications using Bonita Soft BPM for
+  major banking institutions
+- Delivered BPM solutions for BBVA Colombia and APAP Dominican Republic
+- Led SCRUM cell, coordinating sprint planning, daily standups, and sprint reviews
+- Technologies: Java 8, Spring Boot, Groovy, Oracle, PostgreSQL, Bonita Soft,
+  AngularJS, Liquibase, Maven, REST API, SOA
+
+--------------------------------------------------------------------------------
+
+EMBEDDED DEVELOPER
+Rowel Ingenieria SAS | Bogota, Colombia
+Feb 2017 - Jun 2018
+
+- Developed firmware for electromechanical gaming system using PSoC5LP
+  microcontroller
+- Technologies: C, PSoC5LP, Git
+
+--------------------------------------------------------------------------------
+
+JUNIOR .NET DEVELOPER
+Mikohn Technology SAS | Bogota, Colombia
+Oct 2015 - Jan 2017
+
+- Developed and maintained casino-oriented management and monitoring systems
+- Technologies: C#, VB.NET, SQL Server, LINQ, WPF, XAML, MVC
+
+--------------------------------------------------------------------------------
+
+JUNIOR .NET DEVELOPER
+Geosigma Ltda. | Bogota, Colombia
+Jan 2012 - Sep 2013
+
+- Built environmental and social impact calculator application
+- Designed data capture forms for field information collection
+- Technologies: Microsoft Access, Visual Basic
+
+================================================================================
+EDUCATION
+================================================================================
+
+BACHELOR OF SCIENCE IN SYSTEMS AND COMPUTER ENGINEERING
+Universidad Nacional de Colombia, Bogota
+2014 - 2019
+
+ELECTRONIC ENGINEERING (COURSEWORK)
+Universidad Distrital Francisco Jose de Caldas, Bogota
+2010 - 2013
+
+================================================================================
+AWARDS AND CERTIFICATIONS
+================================================================================
+
+- 2nd Place - 4th IEEE Practical Circuits Tournament, Universidad Nacional
+  de Colombia (2015)
+- Web Programming with HTML and JavaScript - SENA Virtual, 40 hours (2012)

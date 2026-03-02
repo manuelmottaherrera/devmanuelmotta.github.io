@@ -1,0 +1,140 @@
+\documentclass[11pt,a4paper]{article}
+
+% ATS-Optimized Resume - No icons, no colors, no fancy formatting
+% Designed for maximum compatibility with Applicant Tracking Systems
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[top=1.5cm,bottom=1.5cm,left=2cm,right=2cm]{geometry}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{parskip}
+
+% ATS-friendly: no colors in links, just underline
+\hypersetup{
+    colorlinks=false,
+    urlcolor=black,
+    linkcolor=black,
+    pdftitle={Manuel Motta - Resume},
+    pdfauthor={Manuel Agustin Motta Herrera},
+}
+
+% Simple section formatting - no colors, just bold + rule
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{12pt}{6pt}
+
+\pagestyle{empty}
+
+\setlist[itemize]{leftmargin=1.5em, nosep, topsep=2pt, itemsep=2pt}
+
+\begin{document}
+
+% ===== HEADER - Plain text, no icons =====
+\begin{center}
+    {\LARGE\bfseries Manuel Agust\'{i}n Motta Herrera} \\[6pt]
+    Bogot\'{a}, Colombia \\
+    Phone: +57 301 593 1002 \quad | \quad Email: manuelmottaherrera@gmail.com \\
+    LinkedIn: \url{https://www.linkedin.com/in/manuel-motta-65b84a1a7} \\
+    GitHub: \url{https://github.com/manuelmottaherrera} \\
+    Stack Overflow: \url{https://stackoverflow.com/users/13502779/manuel-motta}
+\end{center}
+
+% ===== SUMMARY =====
+\section{Professional Summary}
+
+Technical Lead and Systems Engineer with 12+ years of professional experience spanning embedded systems, enterprise .NET applications, BPM financial platforms, and modern reactive microservices. Currently leading electoral technology projects at Tyse SAS, architecting event-driven microservices with Spring Boot 3, WebFlux, and AI-powered solutions. Previously spent nearly 7 years at Trycore SAS delivering BPM financial systems for BBVA (Colombia) and APAP (Dominican Republic). Proficient in AI-assisted development using Claude Code.
+
+% ===== SKILLS - Front-loaded for ATS keyword matching =====
+\section{Technical Skills}
+
+\textbf{Programming Languages:} Java 17, Java 8, Groovy, C\#, VB.NET, JavaScript, TypeScript, C, Visual Basic
+
+\textbf{Frameworks:} Spring Boot 3, Spring WebFlux, Spring Cloud, Spring Cloud Gateway, R2DBC, React, AngularJS, .NET, WPF, MVC
+
+\textbf{Databases:} PostgreSQL, Oracle, SQL Server, Microsoft Access, R2DBC, Liquibase
+
+\textbf{Architecture:} Microservices, REST API, SOA, Event-driven Architecture, BPM (Bonita Soft), Reactive Programming
+
+\textbf{DevOps and Tools:} Docker, Docker Compose, Apache Kafka, Consul, MinIO, Git, Maven, JHipster, Jira
+
+\textbf{AI and Machine Learning:} Claude API (Anthropic), Claude Code, Retrieval Augmented Generation (RAG), Full-text Search, Natural Language Processing (NLP)
+
+\textbf{Methodology:} SCRUM, Agile, Team Leadership, Sprint Planning, Sprint Reviews
+
+\textbf{Other:} JWT Authentication, WhatsApp Business API, Apache PDFBox, OpenAPI, Swagger
+
+% ===== EXPERIENCE =====
+\section{Professional Experience}
+
+\textbf{Technical Lead} \hfill Feb 2025 -- Present \\
+\textbf{Tyse SAS -- Tecnolog\'{i}a y Servicios Electorales} \hfill Bogot\'{a}, Colombia
+\begin{itemize}
+    \item Leading architecture and development of an electoral scrutiny platform composed of 6 microservices
+    \item Designed reactive backend services with Spring Boot 3, WebFlux, and R2DBC for high-throughput electoral data processing
+    \item Built AI-powered WhatsApp helpdesk chatbot using Claude API with Retrieval Augmented Generation (RAG) and PostgreSQL full-text search
+    \item Architected event-driven pipeline with Apache Kafka for E14 electoral form processing, anomaly detection, and notifications
+    \item Implemented React frontend with Spring Cloud Gateway, JWT authentication, and Consul service discovery
+    \item Adopted AI-assisted development workflow using Claude Code as co-developer, accelerating architecture design, code generation, and debugging
+    \item Technologies: Java 17, Spring Boot 3, WebFlux, R2DBC, React, PostgreSQL, Apache Kafka, Docker, Consul, MinIO, Claude AI API, Claude Code, JHipster 8
+\end{itemize}
+
+\vspace{6pt}
+
+\textbf{Backend Developer and SCRUM Cell Leader} \hfill Jul 2018 -- Feb 2025 \\
+\textbf{Trycore SAS} \hfill Bogot\'{a}, Colombia
+\begin{itemize}
+    \item Developed process-oriented financial applications using Bonita Soft BPM for major banking institutions
+    \item Delivered BPM solutions for BBVA Colombia and APAP Dominican Republic
+    \item Led SCRUM cell, coordinating sprint planning, daily standups, and sprint reviews
+    \item Technologies: Java 8, Spring Boot, Groovy, Oracle, PostgreSQL, Bonita Soft, AngularJS, Liquibase, Maven, REST API, SOA
+\end{itemize}
+
+\vspace{6pt}
+
+\textbf{Embedded Developer} \hfill Feb 2017 -- Jun 2018 \\
+\textbf{Rowel Ingenier\'{i}a SAS} \hfill Bogot\'{a}, Colombia
+\begin{itemize}
+    \item Developed firmware for electromechanical gaming system using PSoC5LP microcontroller
+    \item Technologies: C, PSoC5LP, Git
+\end{itemize}
+
+\vspace{6pt}
+
+\textbf{Junior .NET Developer} \hfill Oct 2015 -- Jan 2017 \\
+\textbf{Mikohn Technology SAS} \hfill Bogot\'{a}, Colombia
+\begin{itemize}
+    \item Developed and maintained casino-oriented management and monitoring systems
+    \item Technologies: C\#, VB.NET, SQL Server, LINQ, WPF, XAML, MVC
+\end{itemize}
+
+\vspace{6pt}
+
+\textbf{Junior .NET Developer} \hfill Jan 2012 -- Sep 2013 \\
+\textbf{Geosigma Ltda.} \hfill Bogot\'{a}, Colombia
+\begin{itemize}
+    \item Built environmental and social impact calculator application
+    \item Designed data capture forms for field information collection
+    \item Technologies: Microsoft Access, Visual Basic
+\end{itemize}
+
+% ===== EDUCATION =====
+\section{Education}
+
+\textbf{Bachelor of Science in Systems and Computer Engineering} \hfill 2014 -- 2019 \\
+Universidad Nacional de Colombia, Bogot\'{a}
+
+\vspace{6pt}
+
+\textbf{Electronic Engineering (coursework)} \hfill 2010 -- 2013 \\
+Universidad Distrital Francisco Jos\'{e} de Caldas, Bogot\'{a}
+
+% ===== CERTIFICATIONS =====
+\section{Awards and Certifications}
+
+\textbf{2nd Place} -- 4th IEEE Practical Circuits Tournament, Universidad Nacional de Colombia (2015)
+
+\textbf{Web Programming with HTML and JavaScript} -- SENA Virtual, 40 hours (2012)
+
+\end{document}
