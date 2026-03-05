@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Widget Chat - Prueba</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 { color: #2563eb; }
+        .instructions {
+            background: #f3f4f6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        code {
+            background: #e5e7eb;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .status {
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin: 16px 0;
+            font-weight: 500;
+        }
+        .status.info { background: #dbeafe; color: #1e40af; }
+    </style>
+</head>
+<body>
+    <h1>Prueba del Widget de Chat</h1>
+    <p>Esta pagina carga el widget de Tyse Helpdesk.</p>
+
+    <div class="instructions">
+        <h3>Para probar:</h3>
+        <ol>
+            <li>Levantar la app: <code>cd tyse-helpdesk && ./mvnw</code></li>
+            <li>Exponer con ngrok: <code>ngrok http 8086</code></li>
+            <li>Reemplazar la URL de ngrok y la API key en este HTML</li>
+            <li>Push a GitHub Pages y abrir esta pagina</li>
+        </ol>
+    </div>
+
+    <div class="status info">
+        La burbuja de chat debe aparecer en la esquina inferior derecha.
+    </div>
+
+    <p>Contenido de ejemplo para verificar que el widget no interfiere con el sitio.</p>
+
+    <!-- Widget Tyse Helpdesk -->
+    <!-- Cambiar HELPDESK_URL por la URL de ngrok (ej: https://xxxx.ngrok-free.app) -->
+    <script
+        src="https://marylynn-herblike-dorinda.ngrok-free.dev/widget/widget.js"
+        data-api-key="5c9b74b3d7b24c9c94a8c67afc3aa800"
+    ></script>
+</body>
+</html>
