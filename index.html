@@ -57,7 +57,22 @@
             </p>
             <div class="hero-cta">
                 <a href="#contact" class="btn btn-primary">Get in Touch</a>
-                <a href="resume/Manuel_Motta_Resume.pdf" class="btn btn-outline" target="_blank">Download Resume</a>
+                <div class="btn-dropdown">
+                    <button class="btn btn-outline btn-dropdown-toggle">
+                        Download Resume
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="margin-left:6px"><path d="M7 10l5 5 5-5z"/></svg>
+                    </button>
+                    <div class="btn-dropdown-menu">
+                        <a href="resume/Manuel_Motta_Resume.pdf" target="_blank">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            Visual Resume
+                        </a>
+                        <a href="resume/resume-ats.pdf" target="_blank">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
+                            ATS-Friendly
+                        </a>
+                    </div>
+                </div>
             </div>
             <div class="hero-social">
                 <a href="https://github.com/manuelmottaherrera" target="_blank" rel="noopener" aria-label="GitHub">
@@ -425,6 +440,19 @@
             } else {
                 nav.classList.remove('scrolled');
             }
+        });
+
+        // Resume dropdown
+        const dropdown = document.querySelector('.btn-dropdown');
+        const dropdownToggle = document.querySelector('.btn-dropdown-toggle');
+
+        dropdownToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            dropdown.classList.toggle('open');
+        });
+
+        document.addEventListener('click', () => {
+            dropdown.classList.remove('open');
         });
 
         // Smooth scroll
