@@ -23,6 +23,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        // Prevent flash of wrong theme
+        (function() {
+            var s = localStorage.getItem('theme') || 'system';
+            var t = s === 'system' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : s;
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
 </head>
 <body>
 
@@ -36,40 +44,64 @@
                 <span></span>
             </button>
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+                <li><a href="#experience" class="nav-link" data-i18n="nav.experience">Experience</a></li>
+                <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
+                <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
+                <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
             </ul>
+            <div class="lang-toggle">
+                <button class="lang-toggle-btn" id="lang-toggle-btn">ES</button>
+            </div>
+            <div class="theme-toggle">
+                <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle theme">
+                    <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                </button>
+                <div class="theme-menu" id="theme-menu">
+                    <button data-theme="light">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                        Light
+                    </button>
+                    <button data-theme="dark">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                        Dark
+                    </button>
+                    <button data-theme="system">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        System
+                    </button>
+                </div>
+            </div>
         </div>
     </nav>
 
     <!-- ===== HERO ===== -->
     <section class="hero" id="hero">
         <div class="container hero-content">
-            <p class="hero-greeting">Hello, I'm</p>
+            <p class="hero-greeting" data-i18n="hero.greeting">Hello, I'm</p>
             <h1 class="hero-name">Manuel Motta</h1>
-            <h2 class="hero-title">Technical Lead &amp; Software Engineer</h2>
-            <p class="hero-description">
+            <h2 class="hero-title" data-i18n="hero.title">Technical Lead &amp; Software Engineer</h2>
+            <p class="hero-description" data-i18n-html="hero.description">
                 Building scalable microservices and AI-powered solutions.<br>
                 Based in Bogot&aacute;, Colombia.
             </p>
             <div class="hero-cta">
-                <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                <a href="#contact" class="btn btn-primary" data-i18n="hero.cta">Get in Touch</a>
                 <div class="btn-dropdown">
-                    <button class="btn btn-outline btn-dropdown-toggle">
+                    <button class="btn btn-outline btn-dropdown-toggle" data-i18n-html="hero.resume">
                         Download Resume
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="margin-left:6px"><path d="M7 10l5 5 5-5z"/></svg>
                     </button>
                     <div class="btn-dropdown-menu">
                         <a href="resume/Manuel_Motta_Resume.pdf" target="_blank">
                             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                            Visual Resume
+                            <span data-i18n="hero.resumeVisual">Visual Resume</span>
                         </a>
                         <a href="resume/resume-ats.pdf" target="_blank">
                             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/></svg>
-                            ATS-Friendly
+                            <span data-i18n="hero.resumeAts">ATS-Friendly</span>
                         </a>
                     </div>
                 </div>
@@ -94,21 +126,21 @@
     <!-- ===== ABOUT ===== -->
     <section class="section" id="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title" data-i18n="about.title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>
+                    <p data-i18n-html="about.p1">
                         I'm a Systems Engineer from <strong>Universidad Nacional de Colombia</strong> with over 12 years
                         of professional experience in software development. My career has taken me from embedded systems
                         and .NET desktop applications to enterprise BPM platforms and modern reactive microservices.
                     </p>
-                    <p>
+                    <p data-i18n-html="about.p2">
                         Currently, I serve as <strong>Technical Lead at Tyse SAS</strong> (Tecnolog&iacute;a y Servicios
                         Electorales), where I lead the architecture and development of electoral technology platforms.
                         I design event-driven microservices with Spring Boot 3, WebFlux, and Kafka, and build
                         AI-powered solutions using Claude API with RAG for intelligent document processing.
                     </p>
-                    <p>
+                    <p data-i18n-html="about.p3">
                         Previously, I spent nearly 7 years at <strong>Trycore SAS</strong> building BPM-based financial
                         systems for major banks including BBVA (Colombia) and APAP (Dominican Republic), where I also
                         led a SCRUM cell.
@@ -116,15 +148,15 @@
                     <div class="about-stats">
                         <div class="stat">
                             <span class="stat-number">12+</span>
-                            <span class="stat-label">Years Experience</span>
+                            <span class="stat-label" data-i18n="about.statYears">Years Experience</span>
                         </div>
                         <div class="stat">
                             <span class="stat-number">6</span>
-                            <span class="stat-label">Microservices Built</span>
+                            <span class="stat-label" data-i18n="about.statMicro">Microservices Built</span>
                         </div>
                         <div class="stat">
                             <span class="stat-number">5</span>
-                            <span class="stat-label">Companies</span>
+                            <span class="stat-label" data-i18n="about.statCompanies">Companies</span>
                         </div>
                     </div>
                 </div>
@@ -135,7 +167,7 @@
     <!-- ===== EXPERIENCE ===== -->
     <section class="section section-alt" id="experience">
         <div class="container">
-            <h2 class="section-title">Experience</h2>
+            <h2 class="section-title" data-i18n="exp.title">Experience</h2>
             <div class="timeline">
 
                 <div class="timeline-item">
@@ -143,20 +175,20 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div>
-                                <h3>Technical Lead</h3>
+                                <h3 data-i18n="exp.tyse.role">Technical Lead</h3>
                                 <p class="timeline-company">
                                     <a href="https://www.tysesas.com" target="_blank" rel="noopener">Tyse SAS</a>
                                     &mdash; Tecnolog&iacute;a y Servicios Electorales
                                 </p>
                             </div>
-                            <span class="timeline-date">Feb 2025 &ndash; Present</span>
+                            <span class="timeline-date" data-i18n="exp.tyse.date">Feb 2025 &ndash; Present</span>
                         </div>
                         <ul>
-                            <li>Leading architecture and development of an electoral scrutiny platform with 6 microservices</li>
-                            <li>Designed reactive backend services with Spring Boot 3, WebFlux, and R2DBC</li>
-                            <li>Built AI-powered WhatsApp helpdesk chatbot using Claude API with RAG</li>
-                            <li>Architected event-driven pipeline with Kafka for electoral form processing and anomaly detection</li>
-                            <li>Adopted AI-assisted development workflow using Claude Code as co-developer for architecture design, code generation, and debugging</li>
+                            <li data-i18n="exp.tyse.li1">Leading architecture and development of an electoral scrutiny platform with 6 microservices</li>
+                            <li data-i18n="exp.tyse.li2">Designed reactive backend services with Spring Boot 3, WebFlux, and R2DBC</li>
+                            <li data-i18n="exp.tyse.li3">Built AI-powered WhatsApp helpdesk chatbot using Claude API with RAG</li>
+                            <li data-i18n="exp.tyse.li4">Architected event-driven pipeline with Kafka for electoral form processing and anomaly detection</li>
+                            <li data-i18n="exp.tyse.li5">Adopted AI-assisted development workflow using Claude Code as co-developer for architecture design, code generation, and debugging</li>
                         </ul>
                         <div class="timeline-tags">
                             <span>Java 17</span><span>Spring Boot 3</span><span>WebFlux</span><span>React</span>
@@ -170,7 +202,7 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div>
-                                <h3>Backend Developer &amp; SCRUM Cell Leader</h3>
+                                <h3 data-i18n="exp.trycore.role">Backend Developer &amp; SCRUM Cell Leader</h3>
                                 <p class="timeline-company">
                                     <a href="https://www.trycore.co" target="_blank" rel="noopener">Trycore SAS</a>
                                 </p>
@@ -178,8 +210,8 @@
                             <span class="timeline-date">Jul 2018 &ndash; Feb 2025</span>
                         </div>
                         <ul>
-                            <li>Developed BPM financial applications using Bonita Soft for BBVA (Colombia) and APAP (Dominican Republic)</li>
-                            <li>Led SCRUM cell, coordinating sprint planning and deliverables</li>
+                            <li data-i18n="exp.trycore.li1">Developed BPM financial applications using Bonita Soft for BBVA (Colombia) and APAP (Dominican Republic)</li>
+                            <li data-i18n="exp.trycore.li2">Led SCRUM cell, coordinating sprint planning and deliverables</li>
                         </ul>
                         <div class="timeline-tags">
                             <span>Java 8</span><span>Spring Boot</span><span>Groovy</span><span>Oracle</span>
@@ -193,7 +225,7 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div>
-                                <h3>Embedded Developer</h3>
+                                <h3 data-i18n="exp.rowel.role">Embedded Developer</h3>
                                 <p class="timeline-company">
                                     <a href="https://www.rowel.co" target="_blank" rel="noopener">Rowel Ingenier&iacute;a SAS</a>
                                 </p>
@@ -201,7 +233,7 @@
                             <span class="timeline-date">Feb 2017 &ndash; Jun 2018</span>
                         </div>
                         <ul>
-                            <li>Developed firmware for electromechanical gaming system using PSoC5LP microcontroller</li>
+                            <li data-i18n="exp.rowel.li1">Developed firmware for electromechanical gaming system using PSoC5LP microcontroller</li>
                         </ul>
                         <div class="timeline-tags">
                             <span>C</span><span>PSoC5LP</span><span>Git</span>
@@ -222,7 +254,7 @@
                             <span class="timeline-date">Oct 2015 &ndash; Jan 2017</span>
                         </div>
                         <ul>
-                            <li>Developed and maintained casino-oriented management and monitoring systems</li>
+                            <li data-i18n="exp.mikohn.li1">Developed and maintained casino-oriented management and monitoring systems</li>
                         </ul>
                         <div class="timeline-tags">
                             <span>C#</span><span>SQL Server</span><span>WPF</span><span>MVC</span><span>LINQ</span>
@@ -241,7 +273,7 @@
                             <span class="timeline-date">Jan 2012 &ndash; Sep 2013</span>
                         </div>
                         <ul>
-                            <li>Built environmental and social impact calculator; designed data capture forms</li>
+                            <li data-i18n="exp.geosigma.li1">Built environmental and social impact calculator; designed data capture forms</li>
                         </ul>
                         <div class="timeline-tags">
                             <span>Visual Basic</span><span>MS Access</span>
@@ -256,7 +288,7 @@
     <!-- ===== SKILLS ===== -->
     <section class="section" id="skills">
         <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
+            <h2 class="section-title" data-i18n="skills.title">Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3>Backend</h3>
@@ -273,28 +305,28 @@
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Databases</h3>
+                    <h3 data-i18n="skills.databases">Databases</h3>
                     <div class="skill-tags">
                         <span>PostgreSQL</span><span>Oracle</span><span>SQL Server</span>
                         <span>R2DBC</span><span>Liquibase</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Architecture</h3>
+                    <h3 data-i18n="skills.architecture">Architecture</h3>
                     <div class="skill-tags">
                         <span>Microservices</span><span>REST API</span><span>Event-driven</span>
                         <span>SOA</span><span>Reactive</span><span>BPM</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>DevOps &amp; Tools</h3>
+                    <h3 data-i18n-html="skills.devops">DevOps &amp; Tools</h3>
                     <div class="skill-tags">
                         <span>Docker</span><span>Kafka</span><span>Consul</span><span>MinIO</span>
                         <span>Git</span><span>Maven</span><span>JHipster</span><span>Jira</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>AI &amp; Data</h3>
+                    <h3 data-i18n-html="skills.ai">AI &amp; Data</h3>
                     <div class="skill-tags">
                         <span>Claude API</span><span>RAG</span><span>Full-text Search</span>
                         <span>NLP</span><span>Anthropic SDK</span>
@@ -304,17 +336,74 @@
         </div>
     </section>
 
-    <!-- ===== PROJECTS ===== -->
-    <section class="section section-alt" id="projects">
+    <!-- ===== SERVICES ===== -->
+    <section class="section section-alt" id="services">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title" data-i18n="svc.title">Services</h2>
+            <p class="services-intro" data-i18n="svc.intro">
+                I help businesses automate customer support and streamline communication through AI-powered solutions
+                built on the WhatsApp Business platform.
+            </p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                    </div>
+                    <h3 data-i18n="svc.chatbot.title">AI WhatsApp Chatbot</h3>
+                    <p data-i18n="svc.chatbot.desc">
+                        Custom AI-powered chatbot for your business WhatsApp number. I configure a virtual assistant
+                        trained on your company's documents and knowledge base, so it can answer your customers'
+                        questions 24/7 with accurate, context-aware responses.
+                    </p>
+                    <div class="project-tags">
+                        <span>WhatsApp Business API</span><span>AI Assistant</span><span>RAG</span><span>24/7 Support</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3 data-i18n="svc.widget.title">Web Chat Widget</h3>
+                    <p data-i18n="svc.widget.desc">
+                        Embeddable chat widget for your website, powered by the same AI engine. Your visitors can
+                        get instant answers without leaving your site. Easy integration with a single script tag,
+                        fully customizable to match your brand.
+                    </p>
+                    <div class="project-tags">
+                        <span>Embeddable Widget</span><span>Real-time Streaming</span><span>Custom Branding</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3 data-i18n="svc.multi.title">Multi-Tenant Platform</h3>
+                    <p data-i18n="svc.multi.desc">
+                        Each client gets an independent environment with their own configuration, knowledge base,
+                        custom system prompt, and dedicated WhatsApp number. All data is encrypted at rest and
+                        kept completely isolated between tenants.
+                    </p>
+                    <div class="project-tags">
+                        <span>Data Isolation</span><span>AES-256 Encryption</span><span>Custom Knowledge Base</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="section" id="projects">
+        <div class="container">
+            <h2 class="section-title" data-i18n="proj.title">Featured Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-icon">
                         <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
                     </div>
                     <h3>Tyse Scrutiny</h3>
-                    <p>
+                    <p data-i18n="proj.scrutiny.desc">
                         Electoral scrutiny platform built with microservices architecture. Processes scanned E14 electoral
                         forms through an OCR pipeline, detects anomalies using configurable rules, and notifies attorneys
                         for filing claims. Features 6 interconnected microservices communicating via Kafka.
@@ -330,7 +419,7 @@
                         <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
                     </div>
                     <h3>Tyse Helpdesk</h3>
-                    <p>
+                    <p data-i18n="proj.helpdesk.desc">
                         AI-powered WhatsApp chatbot for helpdesk support. Uses Claude API with Retrieval Augmented
                         Generation (RAG) over a knowledge base of PDF documents. Multi-tenant architecture allows
                         multiple organizations to use the system with their own configuration and documents.
@@ -347,15 +436,15 @@
     <!-- ===== EDUCATION ===== -->
     <section class="section" id="education">
         <div class="container">
-            <h2 class="section-title">Education</h2>
+            <h2 class="section-title" data-i18n="edu.title">Education</h2>
             <div class="education-grid">
                 <div class="education-card">
-                    <h3>B.Sc. Systems and Computer Engineering</h3>
+                    <h3 data-i18n="edu.unal.degree">B.Sc. Systems and Computer Engineering</h3>
                     <p class="education-school">Universidad Nacional de Colombia</p>
                     <span class="education-date">2014 &ndash; 2019</span>
                 </div>
                 <div class="education-card">
-                    <h3>Electronic Engineering (coursework)</h3>
+                    <h3 data-i18n="edu.distrital.degree">Electronic Engineering (coursework)</h3>
                     <p class="education-school">Universidad Distrital Francisco Jos&eacute; de Caldas</p>
                     <span class="education-date">2010 &ndash; 2013</span>
                 </div>
@@ -366,8 +455,8 @@
     <!-- ===== CONTACT ===== -->
     <section class="section section-alt" id="contact">
         <div class="container">
-            <h2 class="section-title">Get in Touch</h2>
-            <p class="contact-intro">
+            <h2 class="section-title" data-i18n="contact.title">Get in Touch</h2>
+            <p class="contact-intro" data-i18n="contact.intro">
                 I'm open to new opportunities and collaborations. Feel free to reach out.
             </p>
             <div class="contact-grid">
@@ -410,12 +499,186 @@
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M15.725 0l-1.72 1.277 6.39 8.588 1.72-1.277L15.725 0zm-3.94 3.418l-1.369 1.644 8.225 6.85 1.369-1.644-8.225-6.85zm-3.15 4.465l-.905 1.94 9.702 4.517.905-1.94-9.702-4.517zm-1.85 4.86l-.44 2.093 10.473 2.201.44-2.092-10.473-2.203zM1.89 15.47V24h19.19v-8.53h-2.133v6.397H4.021v-6.396H1.89zm4.265 2.133v2.13h10.66v-2.13H6.154z"/></svg>
                 </a>
             </div>
-            <p class="footer-text">&copy; 2026 Manuel Motta. All rights reserved.</p>
+            <p class="footer-text" data-i18n-html="footer.copy">&copy; 2026 Manuel Motta. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Mobile nav toggle
+        // ===== I18N =====
+        (function() {
+            const translations = {
+                es: {
+                    'nav.about': 'Sobre M\u00ed',
+                    'nav.experience': 'Experiencia',
+                    'nav.skills': 'Habilidades',
+                    'nav.services': 'Servicios',
+                    'nav.projects': 'Proyectos',
+                    'nav.contact': 'Contacto',
+                    'hero.greeting': 'Hola, soy',
+                    'hero.title': 'L\u00edder T\u00e9cnico & Ingeniero de Software',
+                    'hero.description': 'Construyendo microservicios escalables y soluciones con IA.<br>Bogot\u00e1, Colombia.',
+                    'hero.cta': 'Cont\u00e1ctame',
+                    'hero.resume': 'Descargar CV <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="margin-left:6px"><path d="M7 10l5 5 5-5z"/></svg>',
+                    'hero.resumeVisual': 'CV Visual',
+                    'hero.resumeAts': 'CV ATS',
+                    'about.title': 'Sobre M\u00ed',
+                    'about.p1': 'Soy Ingeniero de Sistemas de la <strong>Universidad Nacional de Colombia</strong> con m\u00e1s de 12 a\u00f1os de experiencia profesional en desarrollo de software. Mi carrera me ha llevado desde sistemas embebidos y aplicaciones de escritorio .NET hasta plataformas BPM empresariales y microservicios reactivos modernos.',
+                    'about.p2': 'Actualmente soy <strong>L\u00edder T\u00e9cnico en Tyse SAS</strong> (Tecnolog\u00eda y Servicios Electorales), donde lidero la arquitectura y desarrollo de plataformas de tecnolog\u00eda electoral. Dise\u00f1o microservicios orientados a eventos con Spring Boot 3, WebFlux y Kafka, y construyo soluciones con IA usando Claude API con RAG para procesamiento inteligente de documentos.',
+                    'about.p3': 'Anteriormente, trabaj\u00e9 casi 7 a\u00f1os en <strong>Trycore SAS</strong> construyendo sistemas financieros basados en BPM para bancos como BBVA (Colombia) y APAP (Rep\u00fablica Dominicana), donde tambi\u00e9n lider\u00e9 una c\u00e9lula SCRUM.',
+                    'about.statYears': 'A\u00f1os de Experiencia',
+                    'about.statMicro': 'Microservicios',
+                    'about.statCompanies': 'Empresas',
+                    'exp.title': 'Experiencia',
+                    'exp.tyse.role': 'L\u00edder T\u00e9cnico',
+                    'exp.tyse.date': 'Feb 2025 \u2013 Presente',
+                    'exp.tyse.li1': 'Liderando arquitectura y desarrollo de plataforma de escrutinio electoral con 6 microservicios',
+                    'exp.tyse.li2': 'Dise\u00f1o de servicios backend reactivos con Spring Boot 3, WebFlux y R2DBC',
+                    'exp.tyse.li3': 'Construcci\u00f3n de chatbot de mesa de ayuda por WhatsApp con IA usando Claude API y RAG',
+                    'exp.tyse.li4': 'Arquitectura de pipeline orientado a eventos con Kafka para procesamiento de formularios electorales y detecci\u00f3n de anomal\u00edas',
+                    'exp.tyse.li5': 'Adopci\u00f3n de flujo de desarrollo asistido por IA usando Claude Code como co-desarrollador para dise\u00f1o de arquitectura, generaci\u00f3n de c\u00f3digo y depuraci\u00f3n',
+                    'exp.trycore.role': 'Desarrollador Backend y L\u00edder de C\u00e9lula SCRUM',
+                    'exp.trycore.li1': 'Desarrollo de aplicaciones financieras BPM con Bonita Soft para BBVA (Colombia) y APAP (Rep\u00fablica Dominicana)',
+                    'exp.trycore.li2': 'Liderazgo de c\u00e9lula SCRUM, coordinando planificaci\u00f3n de sprints y entregables',
+                    'exp.rowel.role': 'Desarrollador Embebido',
+                    'exp.rowel.li1': 'Desarrollo de firmware para sistema de juegos electromec\u00e1nicos usando microcontrolador PSoC5LP',
+                    'exp.mikohn.li1': 'Desarrollo y mantenimiento de sistemas de gesti\u00f3n y monitoreo orientados a casinos',
+                    'exp.geosigma.li1': 'Construcci\u00f3n de calculadora de impacto ambiental y social; dise\u00f1o de formularios de captura de datos',
+                    'skills.title': 'Habilidades T\u00e9cnicas',
+                    'skills.databases': 'Bases de Datos',
+                    'skills.architecture': 'Arquitectura',
+                    'skills.devops': 'DevOps y Herramientas',
+                    'skills.ai': 'IA y Datos',
+                    'svc.title': 'Servicios',
+                    'svc.intro': 'Ayudo a empresas a automatizar la atenci\u00f3n al cliente y optimizar su comunicaci\u00f3n mediante soluciones con IA construidas sobre la plataforma WhatsApp Business.',
+                    'svc.chatbot.title': 'Chatbot IA para WhatsApp',
+                    'svc.chatbot.desc': 'Chatbot con IA personalizado para el n\u00famero de WhatsApp de tu empresa. Configuro un asistente virtual entrenado con los documentos y base de conocimiento de tu compa\u00f1\u00eda, para que responda las preguntas de tus clientes 24/7 con respuestas precisas y contextuales.',
+                    'svc.widget.title': 'Widget de Chat Web',
+                    'svc.widget.desc': 'Widget de chat embebible para tu sitio web, impulsado por el mismo motor de IA. Tus visitantes obtienen respuestas instant\u00e1neas sin salir de tu sitio. Integraci\u00f3n f\u00e1cil con una sola etiqueta script, totalmente personalizable para tu marca.',
+                    'svc.multi.title': 'Plataforma Multi-Tenant',
+                    'svc.multi.desc': 'Cada cliente obtiene un entorno independiente con su propia configuraci\u00f3n, base de conocimiento, prompt de sistema personalizado y n\u00famero de WhatsApp dedicado. Todos los datos se encriptan en reposo y se mantienen completamente aislados entre tenants.',
+                    'proj.title': 'Proyectos Destacados',
+                    'proj.scrutiny.desc': 'Plataforma de escrutinio electoral construida con arquitectura de microservicios. Procesa formularios electorales E14 escaneados mediante un pipeline OCR, detecta anomal\u00edas usando reglas configurables y notifica a abogados para interponer reclamaciones. Cuenta con 6 microservicios interconectados comunic\u00e1ndose v\u00eda Kafka.',
+                    'proj.helpdesk.desc': 'Chatbot de mesa de ayuda por WhatsApp con IA. Usa Claude API con Retrieval Augmented Generation (RAG) sobre una base de conocimiento de documentos PDF. La arquitectura multi-tenant permite que m\u00faltiples organizaciones usen el sistema con su propia configuraci\u00f3n y documentos.',
+                    'edu.title': 'Educaci\u00f3n',
+                    'edu.unal.degree': 'Ingenier\u00eda de Sistemas y Computaci\u00f3n',
+                    'edu.distrital.degree': 'Ingenier\u00eda Electr\u00f3nica (cursado parcial)',
+                    'contact.title': 'Cont\u00e1ctame',
+                    'contact.intro': 'Estoy abierto a nuevas oportunidades y colaboraciones. No dudes en escribirme.',
+                    'footer.copy': '&copy; 2026 Manuel Motta. Todos los derechos reservados.'
+                }
+            };
+
+            // Store original English text
+            const originals = {};
+            const langBtn = document.getElementById('lang-toggle-btn');
+
+            function collectOriginals() {
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    originals[el.getAttribute('data-i18n')] = el.textContent;
+                });
+                document.querySelectorAll('[data-i18n-html]').forEach(el => {
+                    originals[el.getAttribute('data-i18n-html')] = el.innerHTML;
+                });
+            }
+
+            function applyLang(lang) {
+                if (lang === 'es') {
+                    document.documentElement.lang = 'es';
+                    document.querySelectorAll('[data-i18n]').forEach(el => {
+                        const key = el.getAttribute('data-i18n');
+                        if (translations.es[key]) el.textContent = translations.es[key];
+                    });
+                    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+                        const key = el.getAttribute('data-i18n-html');
+                        if (translations.es[key]) el.innerHTML = translations.es[key];
+                    });
+                    langBtn.textContent = 'EN';
+                } else {
+                    document.documentElement.lang = 'en';
+                    document.querySelectorAll('[data-i18n]').forEach(el => {
+                        const key = el.getAttribute('data-i18n');
+                        if (originals[key]) el.textContent = originals[key];
+                    });
+                    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+                        const key = el.getAttribute('data-i18n-html');
+                        if (originals[key]) el.innerHTML = originals[key];
+                    });
+                    langBtn.textContent = 'ES';
+                }
+            }
+
+            collectOriginals();
+            var savedLang = localStorage.getItem('lang') || 'en';
+            applyLang(savedLang);
+
+            langBtn.addEventListener('click', () => {
+                var current = localStorage.getItem('lang') || 'en';
+                var next = current === 'en' ? 'es' : 'en';
+                localStorage.setItem('lang', next);
+                applyLang(next);
+            });
+        })();
+
+        // ===== THEME TOGGLE =====
+        (function() {
+            const iconSun = document.getElementById('icon-sun');
+            const iconMoon = document.getElementById('icon-moon');
+            const themeBtn = document.getElementById('theme-toggle-btn');
+            const themeMenu = document.getElementById('theme-menu');
+            const themeButtons = themeMenu.querySelectorAll('button');
+
+            function getSystemTheme() {
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+
+            function applyTheme(setting) {
+                const resolved = setting === 'system' ? getSystemTheme() : setting;
+                document.documentElement.setAttribute('data-theme', resolved);
+                iconSun.style.display = resolved === 'dark' ? 'none' : 'block';
+                iconMoon.style.display = resolved === 'dark' ? 'block' : 'none';
+                themeButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.theme === setting);
+                });
+            }
+
+            function setTheme(setting) {
+                localStorage.setItem('theme', setting);
+                applyTheme(setting);
+            }
+
+            // Init
+            applyTheme(localStorage.getItem('theme') || 'system');
+
+            // Toggle menu
+            themeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                themeMenu.classList.toggle('open');
+                // Close resume dropdown if open
+                document.querySelector('.btn-dropdown').classList.remove('open');
+            });
+
+            themeButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    setTheme(btn.dataset.theme);
+                    themeMenu.classList.remove('open');
+                });
+            });
+
+            // Listen for system preference changes
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                if ((localStorage.getItem('theme') || 'system') === 'system') {
+                    applyTheme('system');
+                }
+            });
+
+            // Close menu on outside click (handled below with other dropdowns)
+            document.addEventListener('click', () => {
+                themeMenu.classList.remove('open');
+            });
+        })();
+
+        // ===== MOBILE NAV TOGGLE =====
         const navToggle = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
 
@@ -424,7 +687,6 @@
             navToggle.classList.toggle('active');
         });
 
-        // Close menu on link click
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
@@ -432,7 +694,7 @@
             });
         });
 
-        // Navbar scroll effect
+        // ===== NAVBAR SCROLL =====
         const nav = document.getElementById('nav');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -442,20 +704,21 @@
             }
         });
 
-        // Resume dropdown
+        // ===== RESUME DROPDOWN =====
         const dropdown = document.querySelector('.btn-dropdown');
         const dropdownToggle = document.querySelector('.btn-dropdown-toggle');
 
         dropdownToggle.addEventListener('click', (e) => {
             e.stopPropagation();
             dropdown.classList.toggle('open');
+            document.getElementById('theme-menu').classList.remove('open');
         });
 
         document.addEventListener('click', () => {
             dropdown.classList.remove('open');
         });
 
-        // Smooth scroll
+        // ===== SMOOTH SCROLL =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
