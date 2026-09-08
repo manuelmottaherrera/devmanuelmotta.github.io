@@ -1,0 +1,141 @@
+\documentclass[11pt,a4paper]{article}
+
+% Hoja de vida en espanol optimizada para ATS - sin iconos, sin color, sin formato complejo
+% Disenada para maxima compatibilidad con Applicant Tracking Systems
+% Traduccion de resume-ats.tex - mantener ambas versiones sincronizadas
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[top=1.5cm,bottom=1.5cm,left=2cm,right=2cm]{geometry}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{parskip}
+
+% ATS-friendly: no colors in links, just underline
+\hypersetup{
+    colorlinks=false,
+    urlcolor=black,
+    linkcolor=black,
+    pdftitle={Manuel Motta - Hoja de Vida},
+    pdfauthor={Manuel Agustin Motta Herrera},
+}
+
+% Simple section formatting - no colors, just bold + rule
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{12pt}{6pt}
+
+\pagestyle{empty}
+
+\setlist[itemize]{leftmargin=1.5em, nosep, topsep=2pt, itemsep=2pt}
+
+\begin{document}
+
+% ===== ENCABEZADO - Texto plano, sin iconos =====
+\begin{center}
+    {\LARGE\bfseries Manuel Agust\'{i}n Motta Herrera} \\[6pt]
+    Bogot\'{a}, Colombia \\
+    Tel\'{e}fono: +57 301 593 1002 \quad | \quad Correo: manuelmottaherrera@gmail.com \\
+    LinkedIn: \url{https://www.linkedin.com/in/manuel-motta-65b84a1a7} \\
+    GitHub: \url{https://github.com/manuelmottaherrera} \\
+    Stack Overflow: \url{https://stackoverflow.com/users/13502779/manuel-motta}
+\end{center}
+
+% ===== RESUMEN =====
+\section{Resumen Profesional}
+
+L\'{i}der T\'{e}cnico e Ingeniero de Sistemas con m\'{a}s de 12 a\~{n}os de experiencia profesional que abarca sistemas embebidos, aplicaciones empresariales .NET, plataformas financieras BPM y microservicios reactivos modernos. Actualmente lidero proyectos de tecnolog\'{i}a electoral en Tyse SAS, dise\~{n}ando microservicios orientados a eventos con Spring Boot 3, WebFlux y soluciones potenciadas con IA. Anteriormente trabaj\'{e} casi 7 a\~{n}os en Trycore SAS entregando sistemas financieros BPM para BBVA (Colombia) y APAP (Rep\'{u}blica Dominicana). Competente en desarrollo asistido por IA usando Claude Code.
+
+% ===== HABILIDADES - Al inicio para coincidencia de palabras clave en ATS =====
+\section{Habilidades T\'{e}cnicas}
+
+\textbf{Lenguajes de Programaci\'{o}n:} Java 17, Java 8, Groovy, C\#, VB.NET, JavaScript, TypeScript, C, Visual Basic
+
+\textbf{Frameworks:} Spring Boot 3, Spring WebFlux, Spring Cloud, Spring Cloud Gateway, R2DBC, React, AngularJS, .NET, WPF, MVC
+
+\textbf{Bases de Datos:} PostgreSQL, Oracle, SQL Server, Microsoft Access, R2DBC, Liquibase
+
+\textbf{Arquitectura:} Microservicios, REST API, SOA, Arquitectura orientada a eventos, BPM (Bonita Soft), Programaci\'{o}n reactiva
+
+\textbf{DevOps y Herramientas:} Docker, Docker Compose, Apache Kafka, Consul, MinIO, Git, Maven, JHipster, Jira
+
+\textbf{Inteligencia Artificial y Machine Learning:} Claude API (Anthropic), Claude Code, Generaci\'{o}n Aumentada por Recuperaci\'{o}n (RAG), B\'{u}squeda de texto completo, Procesamiento de Lenguaje Natural (NLP)
+
+\textbf{Metodolog\'{i}a:} SCRUM, Agile, Liderazgo de equipos, Planificaci\'{o}n de sprints, Revisiones de sprint
+
+\textbf{Otros:} Autenticaci\'{o}n JWT, WhatsApp Business API, Apache PDFBox, OpenAPI, Swagger
+
+% ===== EXPERIENCIA =====
+\section{Experiencia Profesional}
+
+\textbf{L\'{i}der T\'{e}cnico} \hfill Feb 2025 -- Presente \\
+\textbf{Tyse SAS -- Tecnolog\'{i}a y Servicios Electorales} \hfill Bogot\'{a}, Colombia
+\begin{itemize}
+    \item Liderando la arquitectura y el desarrollo de una plataforma de escrutinio electoral compuesta por 6 microservicios
+    \item Dise\~{n}o de servicios backend reactivos con Spring Boot 3, WebFlux y R2DBC para procesamiento de datos electorales de alto volumen
+    \item Construcci\'{o}n de chatbot de mesa de ayuda por WhatsApp con IA usando Claude API con Generaci\'{o}n Aumentada por Recuperaci\'{o}n (RAG) y b\'{u}squeda de texto completo en PostgreSQL
+    \item Arquitectura de pipeline orientado a eventos con Apache Kafka para procesamiento de formularios electorales E14, detecci\'{o}n de anomal\'{i}as y notificaciones
+    \item Implementaci\'{o}n de frontend en React con Spring Cloud Gateway, autenticaci\'{o}n JWT y descubrimiento de servicios con Consul
+    \item Adopci\'{o}n de flujo de desarrollo asistido por IA usando Claude Code como co-desarrollador, acelerando el dise\~{n}o de arquitectura, la generaci\'{o}n de c\'{o}digo y la depuraci\'{o}n
+    \item Tecnolog\'{i}as: Java 17, Spring Boot 3, WebFlux, R2DBC, React, PostgreSQL, Apache Kafka, Docker, Consul, MinIO, Claude AI API, Claude Code, JHipster 8
+\end{itemize}
+
+\vspace{6pt}
+
+\textbf{Desarrollador Backend y L\'{i}der de C\'{e}lula SCRUM} \hfill Jul 2018 -- Feb 2025 \\
+\textbf{Trycore SAS} \hfill Bogot\'{a}, Colombia
+\begin{itemize}
+    \item Desarrollo de aplicaciones financieras orientadas a procesos usando Bonita Soft BPM para entidades bancarias
+    \item Entrega de soluciones BPM para BBVA Colombia y APAP Rep\'{u}blica Dominicana
+    \item Liderazgo de c\'{e}lula SCRUM, coordinando planificaci\'{o}n de sprints, reuniones diarias y revisiones de sprint
+    \item Tecnolog\'{i}as: Java 8, Spring Boot, Groovy, Oracle, PostgreSQL, Bonita Soft, AngularJS, Liquibase, Maven, REST API, SOA
+\end{itemize}
+
+\vspace{6pt}
+
+\textbf{Desarrollador de Sistemas Embebidos} \hfill Feb 2017 -- Jun 2018 \\
+\textbf{Rowel Ingenier\'{i}a SAS} \hfill Bogot\'{a}, Colombia
+\begin{itemize}
+    \item Desarrollo de firmware para sistema de juegos electromec\'{a}nicos usando microcontrolador PSoC5LP
+    \item Tecnolog\'{i}as: C, PSoC5LP, Git
+\end{itemize}
+
+\vspace{6pt}
+
+\textbf{Desarrollador .NET Junior} \hfill Oct 2015 -- Ene 2017 \\
+\textbf{Mikohn Technology SAS} \hfill Bogot\'{a}, Colombia
+\begin{itemize}
+    \item Desarrollo y mantenimiento de sistemas de gesti\'{o}n y monitoreo orientados a casinos
+    \item Tecnolog\'{i}as: C\#, VB.NET, SQL Server, LINQ, WPF, XAML, MVC
+\end{itemize}
+
+\vspace{6pt}
+
+\textbf{Desarrollador .NET Junior} \hfill Ene 2012 -- Sep 2013 \\
+\textbf{Geosigma Ltda.} \hfill Bogot\'{a}, Colombia
+\begin{itemize}
+    \item Construcci\'{o}n de aplicaci\'{o}n calculadora de impacto ambiental y social
+    \item Dise\~{n}o de formularios de captura de informaci\'{o}n en campo
+    \item Tecnolog\'{i}as: Microsoft Access, Visual Basic
+\end{itemize}
+
+% ===== EDUCACION =====
+\section{Educaci\'{o}n}
+
+\textbf{Ingenier\'{i}a de Sistemas y Computaci\'{o}n} \hfill 2014 -- 2019 \\
+Universidad Nacional de Colombia, Bogot\'{a}
+
+\vspace{6pt}
+
+\textbf{Ingenier\'{i}a Electr\'{o}nica (cursado parcial)} \hfill 2010 -- 2013 \\
+Universidad Distrital Francisco Jos\'{e} de Caldas, Bogot\'{a}
+
+% ===== CERTIFICACIONES =====
+\section{Reconocimientos y Certificaciones}
+
+\textbf{Segundo Lugar} -- IV Torneo de Circuitos Pr\'{a}cticos IEEE, Universidad Nacional de Colombia (2015)
+
+\textbf{Programaci\'{o}n Web con HTML y JavaScript} -- SENA Virtual, 40 horas (2012)
+
+\end{document}

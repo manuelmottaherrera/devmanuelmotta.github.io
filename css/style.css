@@ -293,7 +293,8 @@ img {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     box-shadow: var(--shadow-lg);
-    min-width: 200px;
+    min-width: 210px;
+    overflow: hidden;
     opacity: 0;
     visibility: hidden;
     transition: all 0.2s ease;
@@ -317,12 +318,20 @@ img {
     transition: all var(--transition);
 }
 
-.btn-dropdown-menu a:first-child {
-    border-radius: var(--radius) var(--radius) 0 0;
+.btn-dropdown-group {
+    padding: 10px 16px 4px;
+    text-align: left;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-light);
 }
 
-.btn-dropdown-menu a:last-child {
-    border-radius: 0 0 var(--radius) var(--radius);
+.btn-dropdown-group ~ .btn-dropdown-group {
+    margin-top: 4px;
+    border-top: 1px solid var(--border);
+    padding-top: 10px;
 }
 
 .btn-dropdown-menu a:hover {

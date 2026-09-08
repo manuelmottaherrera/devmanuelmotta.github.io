@@ -41,6 +41,7 @@ Todo el JS vive inline en `index.html`. Al modificar cualquiera de estos, entend
    - `data-i18n-html="clave"` → reemplaza `innerHTML` (para texto con `<br>`, `<strong>`, o SVG embebido).
    - `collectOriginals()` guarda el texto inglés del DOM al cargar; volver a EN restaura desde ahí. **Por eso no existe un diccionario `en`**: agregar texto nuevo significa escribirlo en inglés en el HTML con su atributo `data-i18n*`, y añadir solo la clave española a `translations.es`. Una clave sin entrada en `es` simplemente se queda en inglés al conmutar, sin error visible.
    - Preferencia persistida en `localStorage.lang` (default `'en'`).
+   - **Excepción deliberada:** el dropdown de descarga del CV no usa i18n. Sus dos grupos (`English` / `Español`, clase `.btn-dropdown-group`) y sus cuatro enlaces están rotulados cada uno en el idioma del PDF que sirven, fijos, para que se vea en qué idioma está cada documento sin importar cómo esté el toggle del sitio. No agregarles `data-i18n`.
 
 3. **Tema, menús y nav** (IIFE + código suelto): selector de tres estados `light | dark | system`, guardado en `localStorage.theme` (default `'system'`), con listener de `prefers-color-scheme` que solo actúa en modo `system`. El menú de tema y el dropdown de CV se cierran mutuamente y con click en `document`; cada handler propio hace `e.stopPropagation()`. Si se agrega otro dropdown, seguir ese mismo patrón o los tres empezarán a pelearse.
 
@@ -54,21 +55,40 @@ Breakpoints responsive: 768px y 480px, al final del archivo.
 
 ## CV (`resume/`)
 
-Dos variantes con fuente LaTeX propia, compiladas a PDF y **commiteadas** al repo (GitHub Pages las sirve directo):
+Cuatro variantes — **idioma × formato** — con fuente LaTeX propia, compiladas a PDF y **commiteadas** al repo (GitHub Pages las sirve directo):
 
-- `resume.tex` → `resume.pdf`: versión visual, con color e iconos (`fontawesome5`).
-- `resume-ats.tex` → `resume-ats.pdf`: versión plana para sistemas ATS — sin color, sin iconos, sin formato exótico. Mantenerla así a propósito.
-- `resume.txt`: volcado en texto plano.
+| Fuente | PDF | Idioma | Formato |
+|---|---|---|---|
+| `resume.tex` | `resume.pdf` | Inglés | Visual: color + iconos (`fontawesome5`) |
+| `resume-ats.tex` | `resume-ats.pdf` | Inglés | ATS: sin color, sin iconos |
+| `resume-es.tex` | `resume-es.pdf` | Español | Visual |
+| `resume-ats-es.tex` | `resume-ats-es.pdf` | Español | ATS |
 
-`Manuel_Motta_Resume.pdf` es una **copia byte a byte de `resume.pdf`** con nombre presentable; es la que enlaza el dropdown del hero. Al regenerar el CV visual hay que actualizar las dos, o el sitio servirá el PDF viejo.
+Las versiones ATS son planas **a propósito** (sin color, sin iconos, sin formato exótico), para que las lean los Applicant Tracking Systems. Mantenerlas así.
 
-Compilar (`pdflatex` no está instalado en esta máquina — instalarlo o compilar en otro lado):
+`resume.txt` es un volcado en texto plano del CV en inglés; no está enlazado desde el sitio.
+
+**Las traducciones son pares que hay que mantener sincronizados**: al editar un `.tex` en un idioma, aplicar el mismo cambio en su gemelo. Única divergencia deliberada de maquetación: `resume-es.tex` usa `labelwidth=9em` en la lista de habilidades (contra `7em` del inglés) porque etiquetas como “Bases de Datos” no caben en la columna original.
+
+Los dos PDF visuales existen además **duplicados con nombre presentable**, que son los que enlaza el sitio (el nombre se ve al guardar el archivo):
+
+- `Manuel_Motta_Resume.pdf` — copia byte a byte de `resume.pdf`
+- `Manuel_Motta_Hoja_de_Vida.pdf` — copia byte a byte de `resume-es.pdf`
+
+Al regenerar un CV visual hay que refrescar también su copia, o el sitio seguirá sirviendo el PDF viejo.
+
+### Compilar
+
+`pdflatex` no está instalado en esta máquina; se compila con la imagen Docker de TeX Live (ya descargada localmente). El `-u` evita que los PDF queden como root:
 
 ```bash
-cd resume && pdflatex resume.tex && pdflatex resume-ats.tex
+docker run --rm -u "$(id -u):$(id -g)" -v "$PWD/resume":/work -w /work texlive/texlive:latest \
+  bash -c 'for f in resume resume-ats resume-es resume-ats-es; do pdflatex -interaction=nonstopmode "$f.tex"; done'
 ```
 
-Los artefactos de LaTeX (`.aux`, `.log`, `.out`, …) están en `.gitignore`.
+Dos pasadas si se agregan referencias cruzadas. El número de páginas sale del log: `grep "Output written" resume/*.log` — hoy las cuatro variantes son de 2 páginas. Para revisar el resultado sin abrir un visor: `pdftoppm -png -r 80 resume/resume-es.pdf /tmp/out` (poppler sí está instalado).
+
+Los artefactos de LaTeX (`.aux`, `.log`, `.out`, …) están en `.gitignore`; borrarlos después de compilar.
 
 Detalle heredado: hay un archivo trackeado llamado `resume/ ` (un solo espacio como nombre), duplicado de `resume.pdf`, subido por accidente. No sirve para nada; borrarlo solo si el usuario lo pide.
 
